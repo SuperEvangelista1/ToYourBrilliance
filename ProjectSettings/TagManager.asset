@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - AnchorStart
+  - AnchorStart2
+  - AnchorStart3
+  - AnchorStart4
+  - AnchorStart5
+  - AnchorStart6
+  - AnchorStart7
+  - AnchorStart8
   layers:
   - Default
   - TransparentFX
