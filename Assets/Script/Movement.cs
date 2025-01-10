@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Movement speed of the player
+    public float moveSpeed = 5f; // Movement speed
     private Rigidbody2D rb; // Rigidbody2D component to move the player
     private Vector2 moveDirection; // Direction to move based on input
 
