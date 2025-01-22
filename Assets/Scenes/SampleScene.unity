@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 180075957}
   - component: {fileID: 180075956}
   m_Layer: 5
-  m_Name: Button_Menu
+  m_Name: ignore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1465,7 +1465,7 @@ GameObject:
   - component: {fileID: 695226043}
   - component: {fileID: 695226042}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Panel menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,7 +1696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996606478}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: ignore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
