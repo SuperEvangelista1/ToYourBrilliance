@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5f; // Movement speed
     private Rigidbody2D rb; // Rigidbody2D component to move the player
     private Vector2 moveDirection; // Direction to move based on input
-    private bool canMove = true;
+    public bool canMove = true;
 
     void Start()
     {
@@ -41,7 +41,6 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Move the player based on the calculated direction
         rb.velocity = moveDirection * moveSpeed;
     }
 
