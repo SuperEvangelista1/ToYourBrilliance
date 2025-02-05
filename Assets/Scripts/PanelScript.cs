@@ -7,9 +7,12 @@ public class PanelScript : MonoBehaviour
     // Start is called before the first frame update
     
     public GameObject Panel;
+
+    public UnityEngine.UI.Text inventoryText;
+
     void Start()
     {
-        
+     
     }
 
     // Update is called once per frame
@@ -21,8 +24,11 @@ public class PanelScript : MonoBehaviour
         }
         
     }
-    
-    
 
-    
+    public void AddItemToInventory(string itemName)
+    {
+        inventoryText.text += "\n" + itemName;  // Adds the item name to the inventory text
+    }
+
+
 }
