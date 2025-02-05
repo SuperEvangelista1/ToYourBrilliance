@@ -12,6 +12,7 @@ TagManager:
   - AnchorStart6
   - AnchorStart7
   - AnchorStart8
+  - placeholder
   layers:
   - Default
   - TransparentFX
