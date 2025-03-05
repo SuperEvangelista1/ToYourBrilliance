@@ -5502,7 +5502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9438c16480e082049a0892475111d538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventory: {fileID: 0}
+  playerInventory: {fileID: 46879413}
   objectName: Coin
 --- !u!58 &2058239974
 CircleCollider2D:
