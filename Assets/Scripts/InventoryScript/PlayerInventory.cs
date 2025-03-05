@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
-using TMPro; // Import for TextMeshPro support
+using TMPro;
 
 public class PlayerInventory : MonoBehaviour
 {
     public List<ObjectValue> inventory = new List<ObjectValue>();
-    public TextMeshProUGUI inventoryText; // Reference to the UI text
+    public TextMeshProUGUI inventoryText;// Reference to the UI text
 
     // Method to handle when the player picks up an object
     public void AddObject(string objectName)
@@ -31,7 +30,6 @@ public class PlayerInventory : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    // Method to update the UI text
     void UpdateInventoryUI()
     {
         inventoryText.text = "Inventory:\n";
