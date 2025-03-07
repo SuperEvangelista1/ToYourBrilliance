@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;  // Required for scene management
 
-public class SceneTrigger : MonoBehaviour
+public class SceneSwitcher : MonoBehaviour
 {
     // Scene name to load when triggered
     public string sceneToLoad;
