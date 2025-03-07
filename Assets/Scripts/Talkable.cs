@@ -13,6 +13,7 @@ public class Talkable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isEntered = true;
+            /*DialougueManager.instance.ShowDialogue(lines);*/ //this is to make the dialouge happen on touch, un archive to activate
         }
     }
 
@@ -31,4 +32,5 @@ public class Talkable : MonoBehaviour
             DialougueManager.instance.ShowDialogue(lines);
         }
     }
+   
 }

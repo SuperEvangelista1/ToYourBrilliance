@@ -13,6 +13,7 @@ TagManager:
   - AnchorStart7
   - AnchorStart8
   - placeholder
+  - npc
   layers:
   - Default
   - TransparentFX

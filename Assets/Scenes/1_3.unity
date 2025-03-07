@@ -1327,6 +1327,7 @@ MonoBehaviour:
   lines:
   - Hi
   - How are you
+  - good day
 --- !u!61 &829784176
 BoxCollider2D:
   m_ObjectHideFlags: 0
