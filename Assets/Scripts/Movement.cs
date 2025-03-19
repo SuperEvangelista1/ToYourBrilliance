@@ -47,6 +47,7 @@ public class Movement : MonoBehaviour
     public void DisableMovement()
     {
         canMove = false;
+        moveDirection = Vector2.zero;
     }
 
     // Re-enable movement after finishing the interaction
