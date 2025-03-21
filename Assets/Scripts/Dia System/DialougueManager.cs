@@ -5,69 +5,86 @@ using UnityEngine.UI;
 
 public class DialougueManager : MonoBehaviour
 {
+    public static DialougueManager instance;
     public GameObject dialogueBox;
     public Text dialogueText;
-    public Image npcAvatar;
-    public Image playerAvatar;
-    private bool isDialogueActive = false;
-    private Movement movement;
-    private Queue<string> dialogueQueue = new Queue<string>(); // To store dialogue lines
+    public bool dialogueSpeaker;
 
-    void Start()
-    {
-        movement = FindObjectOfType<Movement>();
-        dialogueBox.SetActive(false);
-    }
+    public Image characterImage;
 
-    public void StartDialogue(string[] dialogue, Sprite npcPortrait)
+    [TextArea(1, 3)]
+    public string[] dialougeLines;
+    [SerializeField] public int currentLine;
+    public bool[] dialogueIsPlayer;
+
+
+
+    public Sprite npcSprite;
+    public Sprite playerSprite;
+
+    private void Awake()
     {
-        dialogueQueue.Clear();
-        foreach (string line in dialogue)
+        if (instance == null)
         {
-            dialogueQueue.Enqueue(line);
-        }
-
-        ShowNextDialogue(npcPortrait);
-        movement.DisableMovement();
-        dialogueBox.SetActive(true);
-    }
-
-    public void ShowNextDialogue(Sprite npcPortrait)
-    {
-        if (dialogueQueue.Count > 0)
-        {
-            string currentLine = dialogueQueue.Dequeue();
-            dialogueText.text = currentLine;
-            npcAvatar.sprite = npcPortrait;
-            npcAvatar.enabled = true;
-            playerAvatar.enabled = false;
+            instance = this;
         }
         else
         {
-            EndDialogue();
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
         }
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void ShowPlayerDialogue(string dialogue)
+    private void Start()
     {
-        dialogueText.text = dialogue;
-        npcAvatar.enabled = false;
-        playerAvatar.enabled = true;
+        dialogueText.text = dialougeLines[currentLine];
     }
 
-    public void EndDialogue()
+    private void Update()
     {
-        dialogueBox.SetActive(false);
-        npcAvatar.enabled = false;
-        playerAvatar.enabled = false;
-        movement.EnableMovement();
-    }
-
-    public void Update()
-    {
-        if (isDialogueActive && Input.GetKeyDown(KeyCode.Space))
+        if (dialogueBox.activeInHierarchy)
         {
-            ShowNextDialogue(npcAvatar.sprite);
+            if (Input.GetMouseButtonUp(0))
+            {
+                currentLine++;
+                if (currentLine < dialougeLines.Length) {
+                    dialogueText.text = dialougeLines[currentLine];
+                    dialogueSpeaker = dialogueIsPlayer[currentLine];
+                }
+                else
+                {
+                    dialogueBox.SetActive(false);
+                    FindObjectOfType<Movement>().canMove = true;
+
+                }
+            }
+        }
+
+        if (dialogueSpeaker)
+        {
+            characterImage.sprite = playerSprite;
+        }
+        else
+        {
+            characterImage.sprite = npcSprite;
         }
     }
+
+    public void ShowDialogue(string[] _newLines, bool[] isPlayerSpeaking, Sprite npcSprites)
+    {
+        npcSprite = npcSprites;
+        currentLine = 0;
+        dialougeLines = _newLines;
+        dialogueText.text = dialougeLines[currentLine];
+        dialogueBox.SetActive(true);
+
+        dialogueIsPlayer = isPlayerSpeaking;
+        dialogueSpeaker = dialogueIsPlayer[currentLine];
+
+        FindObjectOfType<Movement>().canMove = false;
+    }
+
 }

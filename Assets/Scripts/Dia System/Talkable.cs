@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class Talkable : MonoBehaviour
 {
-    public Sprite npcPortrait; // NPC's portrait
-    public string[] npcDialogues; // NPC's dialogue lines
+    [SerializeField] private bool isEntered;
+    [TextArea(1, 3)]
+    public string[] lines;
+    public bool[] isPlayerSpeaking;
+    public Sprite NPCSprite;
 
-    private DialougueManager dialogueManager;
-
-    void Start()
-    {
-        dialogueManager = FindObjectOfType<DialougueManager>();
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Press space to talk.");
+            isEntered = true;
         }
     }
 
@@ -26,15 +23,20 @@ public class Talkable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Hide the prompt if the player leaves the trigger zone
+            isEntered = false;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && dialogueManager.dialogueBox.activeInHierarchy == false)
+        if (isEntered && Input.GetKeyDown(KeyCode.Space) && DialougueManager.instance.dialogueBox.activeInHierarchy == false)
         {
-            dialogueManager.StartDialogue(npcDialogues, npcPortrait);
+            DialougueManager.instance.ShowDialogue(lines, isPlayerSpeaking, NPCSprite);
+            //isPlayerSpeaking = !isPlayerSpeaking;
         }
     }
+
 }
+
+
+

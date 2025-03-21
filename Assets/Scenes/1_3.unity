@@ -563,9 +563,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185a9706417baa14aae0117487a44984, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 648829422}
   dialogueText: {fileID: 812251048}
-  playerPortrait: {fileID: 1879297596}
-  npcPortrait: {fileID: 874200059}
+  characterImage: {fileID: 52371744}
+  dialougeLines: []
+  currentLine: 0
+  npcSprites: []
+  playerSprite: {fileID: 21300000, guid: 3d3c6913b5ad8c040a7ec17f84b73c61, type: 3}
 --- !u!4 &387878371
 Transform:
   m_ObjectHideFlags: 0
@@ -1204,9 +1208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae51615fd42012469c539579eeebee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPortrait: {fileID: 0}
-  npcDialogues: []
-  dialogueManager: {fileID: 0}
+  isEntered: 0
+  lines: []
+  isPlayerSpeaking: 0
 --- !u!1 &812251047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1318,12 +1322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae51615fd42012469c539579eeebee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPortrait: {fileID: 21300000, guid: 3d3c6913b5ad8c040a7ec17f84b73c61, type: 3}
-  npcDialogues:
+  isEntered: 0
+  lines:
   - Hi
-  - How are you
-  - I am ok
-  dialogueManager: {fileID: 387878370}
+  - Hello
+  isPlayerSpeaking: 0
 --- !u!61 &829784176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2131,7 +2134,6 @@ GameObject:
   - component: {fileID: 1412632333}
   - component: {fileID: 1412632335}
   - component: {fileID: 1412632336}
-  - component: {fileID: 1412632337}
   m_Layer: 0
   m_Name: playerBlue_duck
   m_TagString: Player
@@ -2295,19 +2297,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventoryText: {fileID: 381968313}
---- !u!114 &1412632337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412632328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40961159ee9342b4495302c83ad7dc34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npc: {fileID: 829784175}
 --- !u!1 &1423832832
 GameObject:
   m_ObjectHideFlags: 0
