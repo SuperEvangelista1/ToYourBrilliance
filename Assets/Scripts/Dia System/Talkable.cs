@@ -7,13 +7,15 @@ public class Talkable : MonoBehaviour
     [SerializeField] private bool isEntered;
     [TextArea(1, 3)]
     public string[] lines;
+    public bool[] isPlayerSpeaking;
+    public Sprite NPCSprite;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             isEntered = true;
-            /*DialougueManager.instance.ShowDialogue(lines);*/ //this is to make the dialouge happen on touch, un archive to activate
         }
     }
 
@@ -29,8 +31,12 @@ public class Talkable : MonoBehaviour
     {
         if (isEntered && Input.GetKeyDown(KeyCode.Space) && DialougueManager.instance.dialogueBox.activeInHierarchy == false)
         {
-            DialougueManager.instance.ShowDialogue(lines);
+            DialougueManager.instance.ShowDialogue(lines, isPlayerSpeaking, NPCSprite);
+            //isPlayerSpeaking = !isPlayerSpeaking;
         }
     }
-   
+
 }
+
+
+

@@ -6,12 +6,21 @@ using UnityEngine.UI;
 public class DialougueManager : MonoBehaviour
 {
     public static DialougueManager instance;
-    public GameObject dialogueBox;//display
-    public Text dialogueText ;
+    public GameObject dialogueBox;
+    public Text dialogueText;
+    public bool dialogueSpeaker;
+
+    public Image characterImage;
 
     [TextArea(1, 3)]
     public string[] dialougeLines;
-    [SerializeField] private int currentLine;
+    [SerializeField] public int currentLine;
+    public bool[] dialogueIsPlayer;
+
+
+
+    public Sprite npcSprite;
+    public Sprite playerSprite;
 
     private void Awake()
     {
@@ -19,15 +28,16 @@ public class DialougueManager : MonoBehaviour
         {
             instance = this;
         }
-        else {
-            if (instance != this) 
+        else
+        {
+            if (instance != this)
             {
                 Destroy(gameObject);
             }
         }
         DontDestroyOnLoad(gameObject);
     }
-    
+
     private void Start()
     {
         dialogueText.text = dialougeLines[currentLine];
@@ -35,27 +45,44 @@ public class DialougueManager : MonoBehaviour
 
     private void Update()
     {
-        if (dialogueBox.activeInHierarchy) {
+        if (dialogueBox.activeInHierarchy)
+        {
             if (Input.GetMouseButtonUp(0))
             {
                 currentLine++;
-                if (currentLine < dialougeLines.Length)
+                if (currentLine < dialougeLines.Length) {
                     dialogueText.text = dialougeLines[currentLine];
-                else { 
+                    dialogueSpeaker = dialogueIsPlayer[currentLine];
+                }
+                else
+                {
                     dialogueBox.SetActive(false);
                     FindObjectOfType<Movement>().canMove = true;
 
                 }
             }
         }
+
+        if (dialogueSpeaker)
+        {
+            characterImage.sprite = playerSprite;
+        }
+        else
+        {
+            characterImage.sprite = npcSprite;
+        }
     }
 
-    public void ShowDialogue(string[] _newLines)
+    public void ShowDialogue(string[] _newLines, bool[] isPlayerSpeaking, Sprite npcSprites)
     {
-        dialougeLines = _newLines;
+        npcSprite = npcSprites;
         currentLine = 0;
+        dialougeLines = _newLines;
         dialogueText.text = dialougeLines[currentLine];
         dialogueBox.SetActive(true);
+
+        dialogueIsPlayer = isPlayerSpeaking;
+        dialogueSpeaker = dialogueIsPlayer[currentLine];
 
         FindObjectOfType<Movement>().canMove = false;
     }
