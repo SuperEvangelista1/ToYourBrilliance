@@ -12,6 +12,8 @@ public class TeleportScript : MonoBehaviour
     public GameObject anchorpoint6;
     public GameObject anchorpoint7;
     public GameObject anchorpoint8;
+    public GameObject anchorpoint9;
+    public GameObject anchorpoint10;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +60,14 @@ public class TeleportScript : MonoBehaviour
         if (collision.gameObject.tag == "AnchorStart8")
         {
             transform.position = anchorpoint8.gameObject.transform.position;
+        }
+        if (collision.gameObject.tag == "AnchorStart9")
+        {
+            transform.position = anchorpoint9.gameObject.transform.position;
+        }
+        if (collision.gameObject.tag == "AnchorStart10")
+        {
+            transform.position = anchorpoint10.gameObject.transform.position;
         }
     }
 }
