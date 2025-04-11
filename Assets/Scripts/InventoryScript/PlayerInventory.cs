@@ -32,8 +32,6 @@ public class PlayerInventory : MonoBehaviour
 
     void UpdateInventoryUI()
     {
-        inventoryText.text = "Inventory:\n";
-
         foreach (ObjectValue obj in inventory)
         {
             inventoryText.text += obj.objectName + " x" + obj.value + "\n";
