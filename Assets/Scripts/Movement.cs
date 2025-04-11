@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Movement : MonoBehaviour
 {
     public float moveSpeed = 5f; // Movement speed
@@ -15,8 +16,8 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
+
+    void Update(){
         if (canMove)
         {
             // Get input for horizontal and vertical movement
@@ -44,16 +45,15 @@ public class Movement : MonoBehaviour
         rb.velocity = moveDirection * moveSpeed;
     }
 
-    public void DisableMovement()
+    void DisableMovement()
     {
         canMove = false;
         moveDirection = Vector2.zero;
     }
 
-    // Re-enable movement after finishing the interaction
-    public void EnableMovement()
+
+    void EnableMovement()
     {
         canMove = true;
     }
-    
 }

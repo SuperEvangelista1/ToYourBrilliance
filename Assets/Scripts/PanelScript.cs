@@ -8,22 +8,7 @@ public class PanelScript : MonoBehaviour
     
     public GameObject Panel;
 
-    public UnityEngine.UI.Text inventoryText;
-
-    void Start()
-    {
-     
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Panel.SetActive(!Panel.activeSelf);//toggles its state of activity aka checks and unchecks the box that keeps an item visable or in use
-        }
-        
-    }
+    private UnityEngine.UI.Text inventoryText;
 
     public void AddItemToInventory(string itemName)
     {
