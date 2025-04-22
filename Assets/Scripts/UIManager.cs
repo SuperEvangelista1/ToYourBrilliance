@@ -29,6 +29,11 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            FindObjectOfType<ShopManager>().ToggleShop();
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             ToggleUI();
