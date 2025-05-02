@@ -11,15 +11,21 @@ public class ObjectPickup : MonoBehaviour
     public string objectName;
 
     // On trigger, when player collides with the object
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player")) // Check if the collider belongs to the player
         {
-            // Add the object to the player's inventory
-            playerInventory.AddObject(objectName);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                playerInventory.AddObject(objectName);// Add the object to the player's inventory
+                Destroy(gameObject);// Destroy the object after it has been picked up
+            }
+            
+            
 
-            // Destroy the object after it has been picked up
-            Destroy(gameObject);
+            
+            
+            
         }
     }
 }
