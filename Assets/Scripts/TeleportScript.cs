@@ -14,6 +14,7 @@ public class TeleportScript : MonoBehaviour
     public GameObject anchorpoint8;
     public GameObject anchorpoint9;
     public GameObject anchorpoint10;
+    public GameObject returnpoint;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,10 @@ public class TeleportScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            transform.position = returnpoint.gameObject.transform.position;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
