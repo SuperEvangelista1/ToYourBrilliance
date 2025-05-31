@@ -53,7 +53,7 @@ public class DialougueManager : MonoBehaviour
                 if (currentLine < dialougeLines.Length) {
                     dialogueText.text = dialougeLines[currentLine];
                     dialogueSpeaker = dialogueIsPlayer[currentLine];
-                    
+                   
                 }
                 else
                 {

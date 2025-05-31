@@ -100,7 +100,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEntered: 0
   lines:
-  - hello
+  - "Otis: \u201CThere you are.\u201D"
+  - "\u201CWe\u2019re in a bit of a conundrum.\u201D"
+  - "Sana: \u201COh! Thou-art most exceedingly..\n"
+  - 'prepared so; I daresay..
+
+'
+  - ' the very Gods themselves tremble..'
+  - "before at the might of thine organization!\u201D\r"
+  - " \u201CBut seriously. You can\u2019t get past.."
+  - "this tiny shrub?\u201D"
+  - "\u201CWhat exactly did you do to prepare?\u201D"
+  - "Otis: \u201CWill you help me or not?!\u201D"
+  - "Sana: \u201CMhm.\u201D"
+  - " \u201CJust give me a moment to think.\u201D"
+  - " (\u201CAn axe would be quite usefull here.\u201D)"
+  - "Otis: \u201COk, after you get this tree down...\u201D"
+  - " I will survey the area ahead.\u201D"
   isPlayerSpeaking: 
   NPCSprite: {fileID: 0}
 --- !u!61 &196707968768097814
