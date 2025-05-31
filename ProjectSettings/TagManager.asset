@@ -16,6 +16,7 @@ TagManager:
   - npc
   - AnchorStart9
   - AnchorStart10
+  - Blockade
   layers:
   - Default
   - TransparentFX
