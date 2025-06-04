@@ -17,7 +17,7 @@ public class PopUpScript : MonoBehaviour
     void Update()
     {
         PopUpTimer += Time.deltaTime;
-        if(PopUpTimer >= 250F)
+        if(PopUpTimer >= 10F)
         {
             Instantiate(NPC, NPCPos, Quaternion.identity);
             gameObject.SetActive(false);
