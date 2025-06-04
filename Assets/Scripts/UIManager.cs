@@ -8,16 +8,17 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI statusText;
     public GameObject inventoryPanel;
     public GameObject mapPanel;
-    public GameObject encyclopediaPanel;
+    public GameObject JournalPanel; 
+    public GameObject CraftingPanel;
 
 
     private int currentIndex = 0;
-    private string[] modes = { "Inventory", "Map", "Encyclopedia" };
+    private string[] modes = { "Inventory", "Map", "Journal", "Crafting" };
     private GameObject[] panels;
 
     void Start()
     {
-        panels = new GameObject[] { inventoryPanel, mapPanel, encyclopediaPanel };
+        panels = new GameObject[] { inventoryPanel, mapPanel, JournalPanel, CraftingPanel };
 
         foreach (GameObject panel in panels)
         {
