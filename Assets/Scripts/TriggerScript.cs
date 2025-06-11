@@ -4,7 +4,7 @@ using UnityEngine;
 public class TriggerScript : MonoBehaviour
 {
     public GameObject targetObject; // Drag your target GameObject here in Inspector
-
+    
    
     
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,5 +26,7 @@ public class TriggerScript : MonoBehaviour
         {
             Debug.LogError("TargetObject not assigned.");
         }
+        gameObject.SetActive(false);
     }
+    
 }
