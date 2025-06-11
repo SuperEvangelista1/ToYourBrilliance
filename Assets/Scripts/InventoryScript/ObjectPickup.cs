@@ -15,15 +15,9 @@ public class ObjectPickup : MonoBehaviour
     {
         if (other.CompareTag("Player")) // Check if the collider belongs to the player
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
+            
                 playerInventory.AddObject(objectName);// Add the object to the player's inventory
                 Destroy(gameObject);// Destroy the object after it has been picked up
-            }
-            
-            
-
-            
             
             
         }

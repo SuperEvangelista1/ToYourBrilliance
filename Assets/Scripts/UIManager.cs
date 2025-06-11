@@ -9,15 +9,16 @@ public class UIManager : MonoBehaviour
     public GameObject inventoryPanel;
     public GameObject mapPanel;
     public GameObject encyclopediaPanel;
+    public GameObject craftingPanel;
 
 
     private int currentIndex = 0;
-    private string[] modes = { "Inventory", "Map", "Encyclopedia" };
+    private string[] modes = { "Inventory", "Map", "Encyclopedia", "Crafting" };
     private GameObject[] panels;
 
     void Start()
     {
-        panels = new GameObject[] { inventoryPanel, mapPanel, encyclopediaPanel };
+        panels = new GameObject[] { inventoryPanel, mapPanel, encyclopediaPanel, craftingPanel };
 
         foreach (GameObject panel in panels)
         {

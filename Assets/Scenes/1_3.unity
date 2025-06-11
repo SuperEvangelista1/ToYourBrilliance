@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 875942326}
   m_HandleRect: {fileID: 875942325}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopPanel: {fileID: 1781276462}
   playerGoldText: {fileID: 31116713}
-  itemButtonPrefab: {fileID: 6648240449461372123, guid: 71aab10412c15024da9c89fadb7e9190, type: 3}
+  itemButtonPrefab: {fileID: 1920445906}
   itemListContent: {fileID: 1117925348}
   shopItems:
   - itemName: HB
