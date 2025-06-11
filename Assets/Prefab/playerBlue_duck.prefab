@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7248634428373218540}
   - component: {fileID: 7248634428373218543}
   - component: {fileID: 7248634428373218542}
-  - component: {fileID: 7248634428373218537}
   - component: {fileID: 7248634428373218536}
   m_Layer: 0
   m_Name: playerBlue_duck
@@ -146,6 +145,9 @@ MonoBehaviour:
   anchorpoint6: {fileID: 0}
   anchorpoint7: {fileID: 0}
   anchorpoint8: {fileID: 0}
+  anchorpoint9: {fileID: 0}
+  anchorpoint10: {fileID: 0}
+  returnpoint: {fileID: 0}
 --- !u!61 &7248634428373218543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,21 +187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Panel: {fileID: 0}
-  inventoryText: {fileID: 0}
---- !u!114 &7248634428373218537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7248634428373218545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 032394d0c0ea6e34596ccbcc2d3ebc43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 7248634428373218546}
-  smoothing: 5
 --- !u!114 &7248634428373218536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +201,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: []
   inventoryText: {fileID: 0}
+  inventoryPanel: {fileID: 0}
