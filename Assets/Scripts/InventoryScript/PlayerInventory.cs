@@ -9,7 +9,6 @@ public class PlayerInventory : MonoBehaviour
     public TextMeshProUGUI inventoryText;
     public GameObject inventoryPanel;
 
-    // Ìí¼ÓÎïÆ·
     public void AddObject(string objectName)
     {
         ObjectValue existingObject = inventory.Find(item => item.objectName == objectName);
